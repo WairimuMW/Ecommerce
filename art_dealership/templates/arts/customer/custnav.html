@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="{% static 'startbootstrap-bare-gh-pages/css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'bootstrap-5.0.1-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/dash.css' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .log{
+        font-size: 18px;
+        margin-right: 20px;
+      }
+    </style>
+
+  </head>
+  <body>
+    
+<header class="navbar navbar-light sticky-top flex-md-nowrap p-0 shadow" style="background-color: #d3d3d3;">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="{% url 'home' %}">Art Dealership System</a>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <span class="log">Hello, {{request.user}}</span>
+  <span class="log"><a class="btn btn-outline-dark" href="{% url 'logout' %}">Logout</a></span>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'customer_dashboard' %}">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'art' %}">
+              <span data-feather="file"></span>
+              Featured Art
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'cart' %}">
+              <span data-feather="file"></span>
+              Cart
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'checkout' %}">
+              <span data-feather="file"></span>
+              Checkout
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'customer_account' %}">
+              <span data-feather="users"></span>
+              Account
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'customer_settings' %}">
+              <span data-feather="layers"></span>
+              Settings
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'customer_report' %}">
+              <span data-feather="plus-circle"></span>
+              Report
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+
+    
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        
+        {% block content %}
+        
+        
+        {% endblock content %}
+    </main>
+</div>
+</div>
+    
+    
+    <script src="{% static 'startbootstrap-bare-gh-pages/js/scripts.js' %}"></script>
+    <script src="{% static 'bootstrap-5.0.1-dist/js/bootstrap.min.js' %}"></script>
+</body>
+    
+</html>

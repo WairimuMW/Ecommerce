@@ -1,0 +1,34 @@
+{% extends 'arts/customer/custnav.html' %}
+{% load static %}
+{% block content %}
+{% include 'arts/customer/custstats.html' %}
+
+
+<h5>Current Art Ordered</h5>
+<div class="card card-body">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">Art Piece</th>
+                <th scope="col">Artist</th>
+                <th scope="col">Description</th>
+                <th scope="col">Price</th>
+                <th scope="col">Date Ordered</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for items in items %}
+            <tr>
+                <td><img src="{{items.art.artphotoURL}}" alt="..." width="80px" height="60px"></td>
+                <td>{{items.art.artist.first_name}} {{items.art.artist.last_name}}</td>
+                <td>{{items.art.description}}</td>
+                <td>Ksh.{{items.art.price|floatformat:2}}</td>
+                <td>{{items.order.date_ordered}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+{% endblock  %}

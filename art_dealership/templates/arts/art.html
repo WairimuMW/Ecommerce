@@ -1,0 +1,22 @@
+{% extends 'arts/main3.html' %}
+{% load static %}
+
+{% block content %}
+<div class="text-center mt-5">
+  <h1>FEATURED ART</h1><br>
+</div>
+<div class="row"> 
+  {% for art in art %}
+  <div class="col-lg-4">
+    <img class="thumbnail" src="{{art.artphotoURL}}" alt="">
+    <div class="box-element product">
+      <h6><strong>{{art.description}}</strong></h6>
+      <p><em>Status: {{art.status}}</em></p>
+      <hr>
+      <button id="addcart" data-art={{art.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+      <h4 style="display: inline-block; float:right"><strong>Ksh.{{art.price|floatformat:2}}</strong></h4>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}

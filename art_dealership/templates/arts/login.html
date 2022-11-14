@@ -1,0 +1,58 @@
+{% extends 'arts/main4.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+  <body id="logbg" style="background-image: url('{% static "images/10.jpg" %}');">
+
+    <div class="text-center mt-5">
+      <div class="container-sm" style="border: solid 1px #adb5bd; background-color: rgba(204, 230, 255, 0.6); width:450px;">
+        <div class="panel panel-default registration"><br>
+          <div class="panel-heading">
+            <h5 style="text-align: center;">Log In</h5>
+          </div>
+          <hr><br>
+    
+          <div class="panel-body">
+    
+            <form class="form-horizontal" role="form" method="post">
+              {% csrf_token %}
+              <div class="bg-danger error_msg"></div>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" name="username" id="username" placeholder="Username"
+                  aria-label="Username">
+              </div><br>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="password" id="password" placeholder="Password"
+                  aria-label="Password">
+              </div><br>
+    
+              {% for message in messages %}
+              <p class="message">{{ message }}</p>
+              {% endfor %}
+    
+              <div class="d-grid gap-2 col-sm-6 mx-auto">
+                <button type="submit" name="submit" class="btn btn-light btn-block btn-md"
+                  style="background-color: #ffaa00;"><strong>LOG IN</strong></button>
+              </div><br>
+    
+              <p class="message"> Forgot Password? <a href="{% url 'reset_password' %}">Reset Password</a></p>
+    
+    
+              <p class="message">Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    
+            </form>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+  </body>
+  
+{% endblock  %}
+
+
+
+

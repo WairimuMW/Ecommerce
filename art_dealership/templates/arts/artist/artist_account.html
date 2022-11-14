@@ -1,0 +1,51 @@
+{% extends 'arts/artist/artnav.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .profpic{
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+    .accdetails{
+        font-size: 16px;
+    }
+
+</style>
+
+<br>
+<div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card card-body" style="background-color:cornsilk;">
+                <h3 style="text-align: center;">My Account</h3>
+                <hr>
+                <img class="profpic" src="{{artist.profile_pic.url}}" alt="">
+            </div>
+        </div>
+        <div class="col-md-4" >
+            <div class="card card-body" style="background-color:cornsilk;">
+                <h5 style="text-align: center;">Account Details</h5>
+                <hr>
+                <h5 style="text-align: center;">{{user.username}}</h5>
+                <p class="accdetails">First Name: {{artist.first_name}}</p>
+                <p class="accdetails">Last Name: {{artist.last_name}}</p>
+                <p class="accdetails">Phone Number: {{artist.phonenumber}}</p>
+                <p class="accdetails">Email: {{artist.email}}</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-body" style="background-color:cornsilk;">
+                <a class="btn btn-information" href="{% url 'artist_settings' %}" style="background-color:lightcoral;">Account
+                    Settings</a>
+                <br>
+                <a class="btn btn-warning" href="{% url 'artist_dashboard' %}">Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

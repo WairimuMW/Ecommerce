@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Art Dealership System</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'startbootstrap-bare-gh-pages/css/styles.css' %}">
+        <link rel="stylesheet" href="{% static 'bootstrap-5.0.1-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/carousel.css' %}">
+    </head>
+    <body>
+    {% include 'arts/navbar.html' %}
+    
+    {% block content %}
+    
+    {% endblock  %}
+        
+        <script src="{% static 'startbootstrap-bare-gh-pages/js/scripts.js' %}"></script>
+        <script src="{% static 'bootstrap-5.0.1-dist/js/bootstrap.min.js' %}"></script>
+    </body>
+    {% include 'arts/footer.html' %}
+</html>

@@ -1,0 +1,11 @@
+#contactbg{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+
+#message{
+  border-radius: 8px;
+  border-color: rgb(197, 186, 186);
+  color: rgb(75, 72, 72);
+}

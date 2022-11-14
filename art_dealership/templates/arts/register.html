@@ -1,0 +1,22 @@
+{% extends 'arts/main4.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/reg.css' %}">
+
+    <body id= "regbg" style="background-image: url('{% static "images/6.jpg" %}');">
+    <div class="container" >
+        <div class="text-center mt-5">
+            <h1>Welcome!</h1>
+            <p class="lead">Are you an</p>
+
+            <span class="log"><a class="btn btn-light btn-lg" style="background-color: #e2afff;" href="{% url 'artist_register' %}">Artist</a></span>
+            <p class="lead">or</p>
+            <span class="log"><a class="btn btn-light btn-lg" style="background-color: #e2afff;" href="{% url 'customer_register' %}">Art Collector</a></span>
+
+        </div>
+    </div>
+    </body>
+
+{% endblock  %}

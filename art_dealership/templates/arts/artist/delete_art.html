@@ -1,0 +1,21 @@
+{% extends 'arts/artist/artnav.html' %}
+{% load static %}
+{% block content %}
+
+<br>
+<div class="row">
+    <div class="col-md-6" style="text-align: center;">
+        <div class="card card-body">
+            <p>Are you sure you want to delete "{{art}}"?</p>
+            
+            <form action="{% url 'delete_art' art.id %}" method="POST">
+                {% csrf_token %}
+                <a class="btn btn-warning" href={% url 'artist_dashboard' %}>Cancel</a>
+            
+                <input class="btn btn-danger" type="submit" name="Confirm" value="Confirm">
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

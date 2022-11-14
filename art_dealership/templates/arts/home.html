@@ -1,0 +1,28 @@
+{% extends 'arts/main4.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+<body id= "bodybg" style="background-image: url('{% static "images/24.jpg" %}');">
+
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+          <div class="col-xl-6"></div>
+        <div class="col-xl-6">
+          <h1>An Online Art Dealership</h1>
+          <h2>Buy and Sell unique art pieces at your convenience.</h2>
+          <a href="{% url 'artist_dashboard' %}" class="btn-get-started ">Artist</a>
+          <a href="{% url 'customer_dashboard' %}" class="btn-get-started ">Customer</a>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+
+{% endblock %}

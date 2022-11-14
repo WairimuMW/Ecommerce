@@ -1,0 +1,34 @@
+{% extends 'arts/artist/artnav.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<style>
+    .artpic {
+        max-width: 200px;
+        max-height: 200px;
+        margin: 0 auto;
+        border-radius: 50%;
+    }
+</style>
+
+
+<br>
+<div class="container-sm" >
+    <div class="row">
+        <div class="col-md-6" style="text-align: justify;">
+            <div class="card card-body">
+                <form action="" enctype="multipart/form-data" method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+
+                    <br>
+                    <input class="btn btn-success btn-md" type="submit" value="Save" name="Save">
+                    <a class="btn btn-warning" href="{% url 'artist_dashboard' %}">Back to Dashboard</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock  %}

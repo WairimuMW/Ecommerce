@@ -1,0 +1,33 @@
+.artist {
+    padding: 100px 0;
+}
+
+.artist h2 {
+    margin-bottom: 56px;
+}
+
+.artist-wrap {
+    text-align: center;
+}
+
+.artist-wrap img {
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 20px;
+    padding: 0px;
+}
+
+.artist-wrap h4 {
+    margin-top: 32px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #404040;
+}
+
+.artist-wrap p {
+    margin-top: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #828282;
+}
+

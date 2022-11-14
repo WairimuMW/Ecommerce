@@ -1,0 +1,65 @@
+    {% load static %}
+    <style>
+      /* .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      } */
+
+      a{
+        text-decoration: none;
+        color: #495057;
+
+      }
+    </style>
+    <link href="{% static 'footer.css' %}" rel="stylesheet">
+<br>
+<footer class="footer mt-auto py-3 bg-light" >
+  <div class="container" style="background-color:#F0E6EF;">
+    <div class="row">
+      <div class="col-md-4">
+        <h4 class="lead">Art Dealership System</p>
+      </div>
+      <div class="col-md-4">
+        <h4 class="lead">For Artists:</p>
+      </div>
+      <div class="col-md-4">
+        <h4 class="lead">For Customers:</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+          <li class="nav-item"><a href="{% url 'about' %}">About</a></li>
+          <li class="nav-item"><a href="{% url 'art' %}">Featured Art</a></li>
+          <li class="nav-item"><a href="{% url 'contact' %}">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="{% url 'artist_account' %}">My Account</a></li>
+          <li class="nav-item"><a href="{% url 'artist_dashboard' %}">Art</a></li>
+          <li class="nav-item"><a href="{% url 'artist_report' %}">Report</a></li>
+          <li class="nav-item"><a href="{% url 'artist_settings' %}">Settings</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="{% url 'customer_account' %}">My Account</a></li>
+          <li class="nav-item"><a href="{% url 'cart' %}">Cart</a></li>
+          <li class="nav-item"><a href="{% url 'checkout' %}">Checkout</a></li>
+          <li class="nav-item"><a href="{% url 'customer_settings' %}">Settings</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
